@@ -4,5 +4,8 @@ services:
     build: ./
   nginx: 
     build: ./nginx
+    volumes: 
+      - /opt/nginx/logs:/var/log/nginx/:rw
+      - /opt/nginx/ssl:/ssl
     ports:
       - 80:80
