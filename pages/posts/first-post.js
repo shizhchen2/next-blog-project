@@ -1,8 +1,7 @@
 import React from 'react'
-import {NextPage} from 'next'
 import Link from 'next/link'
 
-const FirstPost: NextPage = () => {
+const FirstPost = () => {
     return <div>
         First Post
         <hr/>
