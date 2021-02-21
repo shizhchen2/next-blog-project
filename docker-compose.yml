@@ -1,11 +1,40 @@
-version: '3'
+version: "3.8"
 services:
-  nextjs: 
-    build: ./
-  nginx: 
-    build: ./nginx
-    volumes: 
-      - /opt/nginx/logs:/var/log/nginx/:rw
-      - /opt/nginx/ssl:/ssl
-    ports:
+  nginx:
+    image: nginx
+    container_name: nginx
+    ports: 
       - 80:80
+      - 443:443
+    volumes: 
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx:/etc/other
+    links:
+      - server
+      - web
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports: 
+      - 27017:27017
+    volumes: 
+      - ~/data/db:/data/db
+  server:
+    build: ./server
+    container_name: server
+    restart: always
+    ports:
+      - 7001:7001
+    external_links:
+      - "mongodb:mongodb"
+    # volumes:
+    #   - ./server/uploads:/server/uploads
+  web:
+    build: ./web
+    container_name: web
+    restart: always
+    ports:
+      - 8000:8000
+    external_links:
+      - "server:server"
+      - "mongodb:mongodb"
