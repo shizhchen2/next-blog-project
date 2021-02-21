@@ -34,7 +34,7 @@ services:
     container_name: web
     restart: always
     ports:
-      - 8000:8000
+      - 8000:3000
     external_links:
       - "server:server"
       - "mongodb:mongodb"
