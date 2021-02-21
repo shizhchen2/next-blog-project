@@ -13,7 +13,7 @@ module.exports = appInfo => {
   const config = exports = {};
 
   // use for cookie sign key, should change to your own and keep security
-  config.keys = appInfo.name + '_1613820802467_987';
+  config.keys = appInfo.name + '_shizhchen2';
 
   // add your middleware config here
   config.middleware = [];
@@ -22,6 +22,16 @@ module.exports = appInfo => {
   const userConfig = {
     // myAppName: 'egg',
   };
+
+  // mongoDB config
+  config.mongoose = {
+    client: {
+      url: 'mongodb://mongodb:27017/example',
+      options: {
+        
+      }
+    }
+  }
 
   return {
     ...config,

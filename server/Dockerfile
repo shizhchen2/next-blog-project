@@ -11,8 +11,8 @@ RUN npm config set registry https://registry.npm.taobao.org
 RUN npm install 
 
 ENV HOST 0.0.0.0
-ENV PORT 3000
+ENV PORT 7001
 
-EXPOSE 3000
+EXPOSE 7001
 
 CMD ["npm","start"]
