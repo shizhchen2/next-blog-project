@@ -20,4 +20,4 @@ ENV PORT 8000
 
 EXPOSE 8000
 
-CMD ["npm", "start"]
+CMD ["npm", "start", "PORT", "8000"]
