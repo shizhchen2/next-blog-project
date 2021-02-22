@@ -15,4 +15,4 @@ ENV PORT 7001
 
 EXPOSE 7001
 
-CMD ["npm","start"]
+CMD ["npm","run","start"]
