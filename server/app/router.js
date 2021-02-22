@@ -4,6 +4,6 @@
  * @param {Egg.Application} app - egg application
  */
 module.exports = app => {
-  require('./router.home')(app)
+  require('./router/hello')(app)
   require('./router/test')(app);
 };
