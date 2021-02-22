@@ -27,7 +27,7 @@ services:
     ports:
       - 7001:7001
     depends_on:
-      - "mongodb:mongodb"
+      - mongodb
     # volumes:
     #   - ./server/uploads:/server/uploads
   web:
@@ -37,5 +37,5 @@ services:
     ports:
       - 3000:3000
     depends_on:
-      - "server:server"
+      - server
     #   - "mongodb:mongodb"
