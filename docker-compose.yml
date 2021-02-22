@@ -9,6 +9,7 @@ services:
     volumes: 
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
       - ./nginx:/etc/other
+      - /opt/nginx/ssl:/ssl
     links:
       - server
       - web
