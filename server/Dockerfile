@@ -1,18 +1,18 @@
+  
 FROM node:alpine
 
-RUN mkdir -p /server
+RUN mkdir -p /app
 
-COPY . /server
+WORKDIR /app
 
-WORKDIR /server
+# add npm package
+# COPY ./server/package.json ./package.json
 
-RUN npm config set registry https://registry.npm.taobao.org
+RUN npm i --registry=https://registry.npm.taobao.org
 
-RUN npm install 
-
-ENV HOST 0.0.0.0
-ENV PORT 7001
+# copy code
+# COPY ./server ./
 
 EXPOSE 7001
 
-CMD ["npm","run","start"]
+CMD npm start
