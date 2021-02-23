@@ -6,7 +6,7 @@ RUN mkdir -p /app
 WORKDIR /app
 
 # add npm package
-# COPY ./server/package.json ./package.json
+COPY ./package.json ./package.json
 
 RUN npm i --registry=https://registry.npm.taobao.org
 
