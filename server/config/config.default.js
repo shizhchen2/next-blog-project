@@ -23,12 +23,20 @@ module.exports = appInfo => {
     // myAppName: 'egg',
   };
 
+  config.cluster = {
+    listen: {
+      path: '',
+      port: 7001,
+      hostname: '0.0.0.0',
+    }
+  }
+  
   // mongoDB config
   config.mongoose = {
     client: {
       url: 'mongodb://mongodb:27017/example',
       options: {
-        
+
       }
     }
   }
