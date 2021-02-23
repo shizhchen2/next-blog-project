@@ -25,7 +25,7 @@ services:
     container_name: server
     restart: always
     ports:
-      - 7001:7001
+      - 7001:3000
     depends_on:
       - mongodb
     # volumes:
@@ -35,7 +35,7 @@ services:
     container_name: web
     restart: always
     ports:
-      - 8000:8000
+      - 8000:3000
     depends_on:
       - server
       - mongodb
