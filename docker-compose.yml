@@ -20,8 +20,6 @@ services:
       - 27017:27017
     volumes: 
       - ~/data/db:/data/db
-    networks:
-      - app-network
   server:
     build: ./server
     container_name: server
@@ -43,8 +41,3 @@ services:
     depends_on:
       - server
       - mongodb
-    networks:
-      - app-network
-networks:
-    app-network:
-        driver: bridge
