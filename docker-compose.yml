@@ -21,9 +21,8 @@ services:
     volumes: 
       - ~/data/db:/data/db
   server:
-    build:
-      context: ./server
-      dockerfile: Dockerfile
+    image: egg
+    build: ./server
     container_name: server
     restart: always
     ports:
