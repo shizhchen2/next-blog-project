@@ -28,8 +28,6 @@ services:
       - 7001:7001
     depends_on:
       - mongodb
-    networks:
-      - app-network
     # volumes:
     #   - ./server/uploads:/server/uploads
   web:
