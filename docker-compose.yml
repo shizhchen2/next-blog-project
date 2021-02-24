@@ -39,7 +39,7 @@ services:
     container_name: web
     restart: always
     ports:
-      - 8000:3000
+      - 3000:3000
     depends_on:
       - server
       - mongodb
