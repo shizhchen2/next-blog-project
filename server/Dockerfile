@@ -3,15 +3,18 @@ FROM node:alpine
 
 RUN mkdir -p /app
 
+COPY . ./app
+
 WORKDIR /app
 
+
+RUN npm config set registry https://registry.npm.taobao.org
 # add npm package
 # COPY ./package.json ./package.json
 
-RUN npm i --registry=https://registry.npm.taobao.org
+RUN npm install
 
 # copy code
-COPY . .
 
 EXPOSE 7001
 
