@@ -21,21 +21,25 @@ services:
     volumes: 
       - ~/data/db:/data/db
   server:
-    build: ./server
+    build:
+      context: ./server
+      dockerfile: Dockerfile
     container_name: server
     restart: always
     ports:
-      - 7001:7001
+      - '7001:7001'
     depends_on:
       - mongodb
     # volumes:
     #   - ./server/uploads:/server/uploads
   web:
-    build: ./web
+    build:
+      context: ./web
+      dockerfile: Dockerfile
     container_name: web
     restart: always
     ports:
-      - 3000:3000
+      - '3000:3000'
     depends_on:
       - server
       - mongodb

@@ -11,7 +11,7 @@ WORKDIR /app
 RUN npm i --registry=https://registry.npm.taobao.org
 
 # copy code
-COPY ./ ./
+COPY . .
 
 EXPOSE 7001
 
