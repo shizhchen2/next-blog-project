@@ -3,16 +3,16 @@ FROM node:alpine
 
 RUN mkdir -p /app
 
-COPY . ./app
-
 WORKDIR /app
 
+COPY package*.json ./app
 
 RUN npm config set registry https://registry.npm.taobao.org
-# add npm package
-# COPY ./package.json ./package.json
 
 RUN npm install
+
+# add npm package
+COPY . ./app
 
 # copy code
 

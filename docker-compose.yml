@@ -21,8 +21,8 @@ services:
     volumes: 
       - ~/data/db:/data/db
   server:
-    # image: egg
-    build: ./server
+    image: egg
+    # build: ./server
     container_name: server
     restart: always
     ports:
