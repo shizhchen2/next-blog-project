@@ -26,8 +26,8 @@ services:
     build: ./server
     container_name: server
     restart: always
-    ports:
-      - '7001:7001'
+    expose: 
+      - 3000
     depends_on:
       - mongodb
     # volumes:
@@ -37,7 +37,7 @@ services:
     container_name: web
     restart: always
     ports:
-      - '3000:3000'
+      - 3000:3000
     depends_on:
       - server
       - mongodb
