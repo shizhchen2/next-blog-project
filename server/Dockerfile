@@ -18,5 +18,5 @@ RUN npm install
 COPY . /usr/src/app
 
 # copy code
-CMD ["npm", "start"]
+RUN npm run start
 EXPOSE 7001
