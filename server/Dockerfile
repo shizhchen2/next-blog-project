@@ -7,7 +7,11 @@ WORKDIR /usr/src/app
 
 COPY package.json /usr/src/app
 
-RUN npm config set registry=https://registry.npm.taobao.org && npm install
+RUN npm config set registry=https://registry.npm.taobao.org 
+
+RUN npm i egg-scripts
+
+RUN npm install
 
 
 # add npm package
