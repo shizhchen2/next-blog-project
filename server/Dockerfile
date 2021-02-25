@@ -1,22 +1,23 @@
   
 FROM node:alpine
 
+RUN apk --update add tzdata \
+    && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+    && echo "Asia/Shanghai" > /etc/timezone \
+    && apk del tzdata
+
 RUN mkdir -p /usr/src/app
 
 WORKDIR /usr/src/app
 
-COPY package.json /usr/src/app
-
-RUN npm config set registry=https://registry.npm.taobao.org 
-
-RUN npm i egg-scripts
-
-RUN npm install
-
-
 # add npm package
-COPY . /usr/src/app
+COPY package.json /usr/src/app/package.json
+
+RUN npm i --registry=https://registry.npm.taobao.org
 
 # copy code
-RUN npm run start
+COPY . /usr/src/app
+
 EXPOSE 7001
+
+CMD npm start
