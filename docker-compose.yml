@@ -1,4 +1,5 @@
-version: "3"
+version: "3.8"
+
 services:
   nginx:
     image: nginx
@@ -21,7 +22,7 @@ services:
     volumes: 
       - ~/data/db:/data/db
   server:
-    image: egg
+    # image: egg
     build: ./server
     container_name: server
     restart: always
