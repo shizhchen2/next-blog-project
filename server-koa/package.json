@@ -1,10 +1,11 @@
 {
-  "name": "server-express",
+  "name": "server-koa",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 start pm2.config.js"
+    "start": "pm2 start pm2.json",
+    "test": "nodemon index.js"
   },
   "author": "",
   "license": "ISC",
