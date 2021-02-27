@@ -26,10 +26,11 @@ services:
     build: ./server
     container_name: server
     restart: always
-    expose: 
-      - 3000
+    ports:
+      - 7001:7001
     depends_on:
       - mongodb
+    command: npm start
     # volumes:
     #   - ./server/uploads:/server/uploads
   web:
