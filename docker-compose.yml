@@ -12,7 +12,7 @@ services:
       - ./nginx:/etc/other
       - /opt/nginx/ssl:/ssl
     links:
-      - server
+      - server-koa
       - web
   mongodb:
     image: mongo:latest
@@ -21,8 +21,7 @@ services:
       - 27017:27017
     volumes: 
       - ~/data/db:/data/db
-  server:
-    # image: egg
+  server-koa:
     build: ./server-koa
     container_name: server-koa
     restart: always
@@ -40,5 +39,5 @@ services:
     ports:
       - 3000:3000
     depends_on:
-      - server
+      - server-koa
       - mongodb
