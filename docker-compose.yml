@@ -30,7 +30,7 @@ services:
       - 7001:7001
     depends_on:
       - mongodb
-    command: npm start
+    command: start
     # volumes:
     #   - ./server/uploads:/server/uploads
   web:
