@@ -7,10 +7,8 @@ COPY . /server
 
 WORKDIR /server
 
-RUN npm config set registry https://registry.npm.taobao.org
+RUN npm i --registry=https://registry.npm.taobao.org
 
-
-RUN npm install
 # RUN npm config set python python2.7
 
 # RUN npm install --save next@10.0.7
