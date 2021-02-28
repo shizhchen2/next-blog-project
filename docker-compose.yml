@@ -12,7 +12,7 @@ services:
       - ./nginx:/etc/other
       - /opt/nginx/ssl:/ssl
     links:
-      - server-koa
+      - server
       - web
   mongodb:
     image: mongo:latest
@@ -22,11 +22,11 @@ services:
     volumes: 
       - ~/data/db:/data/db
   server-koa:
-    build: ./server-koa
-    container_name: server-koa
+    build: ./server
+    container_name: server
     restart: always
     ports:
-      - 8080:8080
+      - 7001:7001
     depends_on:
       - mongodb
     # command: start
