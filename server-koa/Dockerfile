@@ -5,12 +5,6 @@ RUN mkdir -p /server
 
 COPY . /server
 
-RUN  apt-get update
-RUN  apt-get upgrade -y
-# Install python3
-RUN  apt-get install -y python3
-
-
 WORKDIR /server
 
 RUN npm config set registry https://registry.npm.taobao.org
