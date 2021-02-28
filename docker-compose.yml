@@ -21,7 +21,7 @@ services:
       - 27017:27017
     volumes: 
       - ~/data/db:/data/db
-  server-koa:
+  server:
     build: ./server
     container_name: server
     restart: always
