@@ -7,7 +7,7 @@ COPY . /web
 
 WORKDIR /web
 
-RUN npm config set registry https://registry.npm.taobao.org
+# RUN npm config set registry https://registry.npm.taobao.org
 
 # RUN npm install --save next@10.0.3
 
