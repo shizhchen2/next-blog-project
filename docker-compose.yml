@@ -22,7 +22,7 @@ services:
     volumes: 
       - ~/data/db:/data/db
   server-koa:
-    build: ./server-koa –-no-cache
+    build: ./server-koa
     container_name: server-koa
     restart: always
     ports:
