@@ -1,8 +1,16 @@
-import Link from 'next/link'
-export default function Home() {
-  return <div className="title">
-      第一篇纹章
-      <a href="/posts/first-post">a 跳转</a>
-      <Link href="/posts/first-post">link 跳转</Link>
+// import Link from 'next/link'
+import { NextPage } from 'next'
+import {GithubOutlined, WechatFilled} from '@ant-design/icons'
+import './index.less'
+const IndexPage:NextPage = () => {
+  return <div className='main-page-container'> 
+    <div className="avatar-container">
+      <img className="img-avatar" src={require('../public/images/avatar.jpg')}></img>
+      <div className="icons-wrap">
+        <GithubOutlined className="contact-icon" onClick={()=>window.location.href='https://github.com/shizhchen2'}/>
+        {/* <WechatFilled className="contact-icon"/> */}
+      </div>
+    </div>
   </div>
 }
+export default IndexPage
