@@ -1,5 +1,5 @@
 import {NextApiHandler} from 'next';
-import {getPostsFromMds} from 'lib/posts';
+import {getPostsFromMds} from '../../lib/posts';
 
 
 const Posts: NextApiHandler = async (req, res) => {

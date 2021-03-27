@@ -5,8 +5,8 @@
             "import",
             {
                 "libraryName": "antd",
-                "libraryDirectory":"lib",
-                "style": "css"
+                // "libraryDirectory":"lib",
+                // "style": "css"
                 // 注：这个配置，是让antd的组件样式也做按需加载，无需再在_app.js里面import antd的样式。
                 // 但是由于会有bug，mini-css-extract-plugin插件也没有更好的方案，所以暂时先统一导入antd的样式
             }

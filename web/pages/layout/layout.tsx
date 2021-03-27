@@ -3,7 +3,7 @@ import Footer from './footer/footer'
 import { Layout } from 'antd'
 import './index.less'
 const { Content } = Layout
-export default function layout(props) {
+export default function layout(props:any) {
     return <Layout className="container">
         <Header />
             <Content>{props.children}</Content>

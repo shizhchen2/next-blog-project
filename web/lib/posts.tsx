@@ -20,7 +20,7 @@ export const getPostsFromMds = async ()=>{
     return x;
 }
 
-export const getSpecialDetailFromMd = async (fileName:String) => {
+export const getSpecialDetailFromMd = async (fileName:any) => {
     const markdownFile = path.join(process.cwd(), `markdowns/${fileName}`)
     const fileDetail = fs.readFileSync(markdownFile, 'utf8')
     const {data: {title, date}, content} = matter(fileDetail);
